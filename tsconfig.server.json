@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true, 
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./api",
+    "resolveJsonModule": true,
+    "lib": ["ESNext"],
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["api/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
