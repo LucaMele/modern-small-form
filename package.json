@@ -1,13 +1,13 @@
 {
   "name": "modern-small-form",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "dist/api/index.js",
   "type": "module",
   "scripts": {
     "build": "vite build && tsc --project tsconfig.server.json",
     "dev": "concurrently \"vite\" \"TS_NODE_PROJECT=tsconfig.server.json tsx api/index.ts\"",
     "serve": "vercel dev",
-    "start": "node api/index.ts"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
