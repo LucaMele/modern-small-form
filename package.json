@@ -8,6 +8,10 @@
     "dev": "vite", 
     "serve": "vercel dev"
   },
+  "files": [
+    "dist",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
