@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build && tsc --project tsconfig.server.json",
-    "dev": "vite", 
+    "dev": "concurrently \"vite\" \"TS_NODE_PROJECT=tsconfig.server.json tsx api/index.ts\"",
     "serve": "vercel dev"
   },
   "author": "",
@@ -22,7 +22,9 @@
     "@types/node": "^22.7.4",
     "@vitejs/plugin-vue": "^5.1.4",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.1",
     "postcss": "^8.4.47",
+    "tsx": "^4.19.1",
     "typescript": "^5.6.2",
     "vite": "^5.4.8"
   },
