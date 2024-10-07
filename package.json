@@ -1,0 +1,29 @@
+{
+  "name": "modern-small-form",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "lit": "^3.2.0",
+    "tailwindcss": "^3.4.13"
+  },
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}
