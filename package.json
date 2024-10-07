@@ -1,7 +1,7 @@
 {
   "name": "modern-small-form",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "dist/api/index.js",
   "type": "module",
   "scripts": {
     "build": "vite build && tsc --project tsconfig.server.json",
