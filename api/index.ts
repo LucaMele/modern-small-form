@@ -26,7 +26,7 @@ function calculateMinimumWage(jobType: string, location: string, dob: string, ap
   return 15.00; // Example: Return a static minimum wage for now
 }
 
-const PORT = process.env.PORT || 8080;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
