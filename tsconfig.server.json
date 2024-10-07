@@ -11,5 +11,5 @@
     "rootDir": "./",
     "resolveJsonModule": true
   },
-  "include": ["api/**/*.ts"]
+  "include": ["./index.ts", "/api/**/*.ts"]
 }
