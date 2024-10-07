@@ -17,6 +17,10 @@ app.post('/calculate-minimum-wage', (req: Request, res: Response) => {
   res.json({ minimumWage });
 });
 
+app.get('/', (req: Request, res: Response) => {
+  res.json({ test: 'Hello World' });
+});
+
 function calculateMinimumWage(jobType: string, location: string, dob: string, applicationDate: string): number {
   // Mock logic for the minimum wage calculation
   return 15.00; // Example: Return a static minimum wage for now
