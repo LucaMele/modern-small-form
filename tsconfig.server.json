@@ -1,12 +1,14 @@
 {
+  "emptyOutDir": true,
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "commonjs",  
+    "target": "esnext",              
+    "module": "esnext",             
+    "moduleResolution": "node", 
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": "./dist/api",
-    "rootDir": "./api",
+    "outDir": "./dist",
+    "rootDir": "./",
     "resolveJsonModule": true
   },
   "include": ["api/**/*.ts"]
