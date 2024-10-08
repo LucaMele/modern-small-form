@@ -4,9 +4,6 @@ const PORT = Number(process.env.PORT) || 3000;
 
 export default defineConfig({
     root: 'src',
-    // css: {
-    //     postcss: './postcss.config.cjs',
-    // },
     server: {
         port: PORT,
         proxy: {

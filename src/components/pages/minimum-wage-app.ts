@@ -1,6 +1,7 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import style from './minimum-wage-app.component.css?inline';
+import i18next from 'i18next';
 
 interface CalculationData {
     dateOfBirth: string;
@@ -33,6 +34,7 @@ export class MinimumWageApp extends LitElement {
     // Method to change language and trigger an update
     async setLanguage(lang: string) {
         this.language = lang;
+        i18next.changeLanguage(lang); // Change i18next language
     }
 
     // Method to calculate the wage and update the result state
@@ -63,36 +65,52 @@ export class MinimumWageApp extends LitElement {
     render() {
         return html`
             <div class="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-4">
-                <button @click="${() => this.setLanguage('en')}">EN</button>
-                <button @click="${() => this.setLanguage('de')}">DE</button>
-                <h1 class="text-2xl font-bold mb-4">Welcome! Current language: ${this.language}</h1>
+                <!-- Header with Logo and Language Selection -->
+                <header
+                    class="w-full max-w-md flex justify-between items-center  shadow-md bg-gradient-to-r from-[#73B01E] to-[#55742A] p-4"
+                >
+                    <img
+                        src="https://www.enovetic.ch/wp-content/uploads/2023/11/f13da824aed7ccb4d28bff6e8158b58d-e1700759022261.png"
+                        alt="Logo"
+                        class="h-4"
+                    />
+                    <div class="flex space-x-4">
+                        <button @click="${() => this.setLanguage('de')}" class="text-white font-semibold">
+                            ${i18next.t('language.de')}
+                        </button>
+                        <button @click="${() => this.setLanguage('fr')}" class="text-white font-semibold">
+                            ${i18next.t('language.fr')}
+                        </button>
+                        <button @click="${() => this.setLanguage('it')}" class="text-white font-semibold">
+                            ${i18next.t('language.it')}
+                        </button>
+                    </div>
+                </header>
 
-                <!-- Form inputs for wage calculation -->
-                <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
-                    <label class="block mb-2 text-sm font-medium text-gray-700">Date of Birth</label>
-                    <input type="date" id="dob" class="w-full p-2 border border-gray-300 rounded-md mb-4" />
+                <!-- Form Section -->
+                <div class="bg-[#F9F9F4] shadow-lg rounded-lg p-6 w-full max-w-md mt-6">
+                    <!-- Title -->
+                    <h2 class="text-lg font-semibold mb-4 text-gray-700">${i18next.t('form.title')}</h2>
 
-                    <label class="block mb-2 text-sm font-medium text-gray-700">Job Type</label>
-                    <input type="text" id="jobType" class="w-full p-2 border border-gray-300 rounded-md mb-4" />
+                    <!-- Start Date Input -->
+                    <label class="block mb-2 text-sm font-medium text-gray-600">${i18next.t('form.startDate')}</label>
+                    <div class="relative">
+                        <input
+                            type="date"
+                            id="dob"
+                            class="w-full p-3 border border-gray-300 rounded-md mb-4 text-gray-700"
+                        />
+                    </div>
 
-                    <label class="block mb-2 text-sm font-medium text-gray-700">Location</label>
-                    <input type="text" id="location" class="w-full p-2 border border-gray-300 rounded-md mb-4" />
-
-                    <label class="block mb-2 text-sm font-medium text-gray-700">Application Date</label>
-                    <input type="date" id="applicationDate" class="w-full p-2 border border-gray-300 rounded-md mb-4" />
-
-                    <button
-                        @click="${this.handleCalculateWage}"
-                        class="bg-blue-500 text-white p-2 rounded-md w-full mt-4"
-                    >
-                        Calculate Minimum Wage
-                    </button>
+                    <!-- Location Input -->
+                    <label class="block mb-2 text-sm font-medium text-gray-600">${i18next.t('form.location')}</label>
+                    <input
+                        type="text"
+                        id="location"
+                        class="w-full p-3 border border-gray-300 rounded-md mb-4 text-gray-700"
+                        placeholder="${i18next.t('form.locationPlaceholder')}"
+                    />
                 </div>
-
-                <!-- Display the wage result -->
-                ${this.minimumWageResult !== null
-                    ? html`<p class="mt-4 text-xl">Minimum Wage: $${this.minimumWageResult}</p>`
-                    : html`<p class="mt-4">Enter details to calculate the minimum wage.</p>`}
             </div>
         `;
     }

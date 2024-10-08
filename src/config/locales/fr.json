@@ -1,0 +1,13 @@
+{
+    "language": {
+        "de": "DE",
+        "fr": "FR",
+        "it": "IT"
+    },
+    "form": {
+        "title": "1. Date et Lieu de Travail",
+        "startDate": "Date de début",
+        "location": "Lieu",
+        "locationPlaceholder": "Code postal ou nom"
+    }
+}

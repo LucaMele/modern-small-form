@@ -1,15 +1,15 @@
 {
-  "emptyOutDir": true,
-  "compilerOptions": {
-    "target": "esnext",              
-    "module": "esnext",             
-    "moduleResolution": "node", 
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "./",
-    "resolveJsonModule": true
-  },
-  "include": ["./index.ts", "/api/**/*.ts"]
+    "emptyOutDir": true,
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "./dist",
+        "rootDir": "./",
+        "resolveJsonModule": true
+    },
+    "include": ["./index.ts", "/api/**/*.ts"]
 }
