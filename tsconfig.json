@@ -1,17 +1,12 @@
 {
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "target": "esnext",              
-    "module": "esnext",             
-    "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "useDefineForClassFields": false,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "lib": ["dom", "esnext"],
-    "baseUrl": "./",
-  },
-  "include": ["src/**/*.mts"],
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "useDefineForClassFields": false,
+        "baseUrl": "src"
+    },
+    "include": ["src"]
 }
