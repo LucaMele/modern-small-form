@@ -93,7 +93,9 @@ export class MinimumWageApp extends LitElement {
                     <h2 class="text-lg font-semibold mb-4 text-gray-700">${i18next.t('form.title')}</h2>
 
                     <!-- Start Date Input -->
-                    <label class="block mb-2 text-sm font-medium text-gray-600">${i18next.t('form.startDate')}</label>
+                    <label for="dob" class="block mb-2 text-sm font-medium text-gray-600"
+                        >${i18next.t('form.startDate')}</label
+                    >
                     <div class="relative">
                         <input
                             type="date"
@@ -103,7 +105,9 @@ export class MinimumWageApp extends LitElement {
                     </div>
 
                     <!-- Location Input -->
-                    <label class="block mb-2 text-sm font-medium text-gray-600">${i18next.t('form.location')}</label>
+                    <label for="location" class="block mb-2 text-sm font-medium text-gray-600"
+                        >${i18next.t('form.location')}</label
+                    >
                     <input
                         type="text"
                         id="location"
