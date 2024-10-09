@@ -6,17 +6,19 @@
         "en": "EN"
     },
     "form": {
-        "title1": "1. Date de début et lieu",
-        "title2": "2. Date de naissance du candidat",
+        "title1": "1. Date et Lieu de l'Application",
+        "title2": "2. Date de Naissance du Candidat",
         "title3": "3. Fonction",
         "startDate": "Date de début",
         "location": "Lieu",
-        "locationPlaceholder": "Code postal ou nom",
+        "locationPlaceholder": "Code Postal ou Nom",
         "submit": "Soumettre",
         "validation": {
             "startDateRequired": "Veuillez fournir une date de début valide.",
             "locationRequired": "Veuillez fournir un lieu valide.",
-            "locationPattern": "Veuillez entrer un code postal ou un nom valide (min. 2 caractères)."
+            "locationPattern": "Veuillez entrer un code postal ou un nom valide (min. 2 caractères).",
+            "birthdayRequired": "Veuillez fournir une date de naissance valide.",
+            "functionRequired": "Veuillez sélectionner une fonction."
         }
     }
 }

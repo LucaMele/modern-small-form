@@ -16,7 +16,9 @@
         "validation": {
             "startDateRequired": "Please provide a valid start date.",
             "locationRequired": "Please provide a valid location.",
-            "locationPattern": "Please enter a valid ZIP code or name (min. 2 characters)."
+            "locationPattern": "Please enter a valid ZIP code or name (min. 2 characters).",
+            "birthdayRequired": "Please provide a valid date of birth.",
+            "functionRequired": "Please select a function."
         }
     }
 }

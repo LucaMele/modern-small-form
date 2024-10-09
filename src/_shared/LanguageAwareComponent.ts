@@ -8,7 +8,7 @@ export class LanguageAwareComponent extends LitElement {
 
     updated(changedProperties: Map<string | number | symbol, unknown>) {
         if (changedProperties.has('language')) {
-            this.requestUpdate();
+            i18next.changeLanguage(this.language);
         }
     }
 

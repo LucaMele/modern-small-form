@@ -6,17 +6,19 @@
         "en": "EN"
     },
     "form": {
-        "title1": "1. Data di inizio e luogo",
-        "title2": "2. Data di nascita del candidato",
+        "title1": "1. Data e Luogo dell'Applicazione",
+        "title2": "2. Data di Nascita del Candidato",
         "title3": "3. Funzione",
-        "startDate": "Data di inizio",
+        "startDate": "Data di Inizio",
         "location": "Luogo",
-        "locationPlaceholder": "CAP o nome",
+        "locationPlaceholder": "CAP o Nome",
         "submit": "Invia",
         "validation": {
             "startDateRequired": "Si prega di fornire una data di inizio valida.",
             "locationRequired": "Si prega di fornire un luogo valido.",
-            "locationPattern": "Si prega di inserire un CAP o un nome valido (min. 2 caratteri)."
+            "locationPattern": "Si prega di inserire un CAP o un nome valido (min. 2 caratteri).",
+            "birthdayRequired": "Si prega di fornire una data di nascita valida.",
+            "functionRequired": "Si prega di selezionare una funzione."
         }
     }
 }

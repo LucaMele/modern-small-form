@@ -7,7 +7,7 @@
     },
     "form": {
         "title1": "1. Einsatzdatum und Ort",
-        "title2": "2. Kandidat Geburtsdatum",
+        "title2": "2. Geburtsdatum des Kandidaten",
         "title3": "3. Funktion",
         "startDate": "Startdatum",
         "location": "Ort",
@@ -16,7 +16,9 @@
         "validation": {
             "startDateRequired": "Bitte geben Sie ein gültiges Startdatum ein.",
             "locationRequired": "Bitte geben Sie einen gültigen Ort an.",
-            "locationPattern": "Bitte geben Sie eine gültige PLZ oder einen Namen (mind. 2 Zeichen) ein."
+            "locationPattern": "Bitte geben Sie eine gültige PLZ oder einen Namen ein (mindestens 2 Zeichen).",
+            "birthdayRequired": "Bitte geben Sie ein gültiges Geburtsdatum ein.",
+            "functionRequired": "Bitte wählen Sie eine Funktion aus."
         }
     }
 }
