@@ -55,6 +55,8 @@ export class CustomForm extends LanguageAwareComponent {
                         type="date"
                         id="start_date"
                         name="start_date"
+                        min="2024-06-10"
+                        max="2024-08-05"
                         required
                         class="w-full p-3 border border-gray-300 rounded-md mb-1 text-gray-700"
                         @input="${this.handleInputChange}"
