@@ -6,10 +6,12 @@
         "en": "EN"
     },
     "form": {
-        "title": "1. Data di Inizio e Luogo",
+        "title1": "1. Data di inizio e luogo",
+        "title2": "2. Data di nascita del candidato",
+        "title3": "3. Funzione",
         "startDate": "Data di inizio",
         "location": "Luogo",
-        "locationPlaceholder": "CAP o Nome",
+        "locationPlaceholder": "CAP o nome",
         "submit": "Invia",
         "validation": {
             "startDateRequired": "Si prega di fornire una data di inizio valida.",

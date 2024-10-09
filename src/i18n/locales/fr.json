@@ -6,10 +6,12 @@
         "en": "EN"
     },
     "form": {
-        "title": "1. Date et Lieu d'Application",
+        "title1": "1. Date de début et lieu",
+        "title2": "2. Date de naissance du candidat",
+        "title3": "3. Fonction",
         "startDate": "Date de début",
         "location": "Lieu",
-        "locationPlaceholder": "Code Postal ou Nom",
+        "locationPlaceholder": "Code postal ou nom",
         "submit": "Soumettre",
         "validation": {
             "startDateRequired": "Veuillez fournir une date de début valide.",

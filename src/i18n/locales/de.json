@@ -6,7 +6,9 @@
         "en": "EN"
     },
     "form": {
-        "title": "1. Einsatzdatum und Ort",
+        "title1": "1. Einsatzdatum und Ort",
+        "title2": "2. Kandidat Geburtsdatum",
+        "title3": "3. Funktion",
         "startDate": "Startdatum",
         "location": "Ort",
         "locationPlaceholder": "PLZ oder Name",

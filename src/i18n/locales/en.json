@@ -6,7 +6,9 @@
         "en": "EN"
     },
     "form": {
-        "title": "1. Application Date and Location",
+        "title1": "1. Application Date and Location",
+        "title2": "2. Candidate's Date of Birth",
+        "title3": "3. Function",
         "startDate": "Start Date",
         "location": "Location",
         "locationPlaceholder": "ZIP Code or Name",

@@ -57,6 +57,10 @@ export class CustomForm extends LanguageAwareComponent {
         }
     }
 
+    private prevStep() {
+        this.currentStep = this.currentStep - 1;
+    }
+
     handleSubmit(e: Event) {
         e.preventDefault();
 
@@ -72,6 +76,7 @@ export class CustomForm extends LanguageAwareComponent {
     }
 
     private canSubmit() {
+        console.log(this.isGroupOneValid() && this.isGroupTwoValid() && this.isGroupThreeValid());
         return this.isGroupOneValid() && this.isGroupTwoValid() && this.isGroupThreeValid();
     }
 
@@ -84,10 +89,9 @@ export class CustomForm extends LanguageAwareComponent {
                 class="bg-[#F9F9F4] shadow-lg rounded-lg p-6 w-full mt-6 animate-drop-in"
                 novalidate
             >
-                <h2 class="text-lg font-semibold mb-4 text-gray-700">${this.t('form.title')}</h2>
-
                 ${(this.currentStep === 1 &&
                     html`<div class="animate-drop-in">
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">${this.t('form.title1')}</h2>
                         <label for="start_date" class="block mb-2 text-sm font-medium text-gray-600"
                             >${this.t('form.startDate')}</label
                         >
@@ -122,21 +126,25 @@ export class CustomForm extends LanguageAwareComponent {
                             >Please enter a valid ZIP code or name (min. 2 characters).</span
                         >
 
-                        <button
-                            type="button"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
-                            @click="${this.nextStep}"
-                        >
-                            Next
-                        </button>
+                        <div class="grid-cols-2 grid gap-8">
+                            <button
+                                type="button"
+                                class="bg-blue-500 col-span-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
+                                @click="${this.nextStep}"
+                            >
+                                Next
+                            </button>
+                        </div>
                     </div>`) ||
                 ''}
                 ${(this.currentStep === 2 &&
                     html`<div class="animate-drop-in">
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">${this.t('form.title2')}</h2>
                         <label for="birthday_date" class="block mb-2 text-sm font-medium">Birthday Date</label>
                         <input
                             type="date"
                             id="birthday_date"
+                            max="${new Date().toISOString().split('T')[0]}"
                             required
                             class="w-full p-3 mb-4 border border-gray-300 rounded"
                         />
@@ -144,17 +152,27 @@ export class CustomForm extends LanguageAwareComponent {
                             >Please enter a valid ZIP code or name (min. 2 characters).</span
                         >
 
-                        <button
-                            type="button"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
-                            @click="${this.nextStep}"
-                        >
-                            Next
-                        </button>
+                        <div class="grid-cols-2 grid gap-8">
+                            <button
+                                type="button"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
+                                @click="${this.prevStep}"
+                            >
+                                Prev
+                            </button>
+                            <button
+                                type="button"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
+                                @click="${this.nextStep}"
+                            >
+                                Next
+                            </button>
+                        </div>
                     </div>`) ||
                 ''}
                 ${(this.currentStep === 3 &&
                     html`<div class="animate-drop-in">
+                        <h2 class="text-lg font-semibold mb-4 text-gray-700">${this.t('form.title3')}</h2>
                         <label class="block mb-2 text-sm font-medium">Functions</label>
                         <div class="flex items-center mb-4">
                             <input
@@ -182,6 +200,13 @@ export class CustomForm extends LanguageAwareComponent {
                             />
                             <label for="function3" class="text-sm">Electrician</label>
                         </div>
+                        <button
+                            type="button"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
+                            @click="${this.prevStep}"
+                        >
+                            Prev
+                        </button>
                     </div>`) ||
                 ''}
                 <button
