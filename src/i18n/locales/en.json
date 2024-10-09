@@ -1,0 +1,20 @@
+{
+    "language": {
+        "de": "DE",
+        "fr": "FR",
+        "it": "IT",
+        "en": "EN"
+    },
+    "form": {
+        "title": "1. Application Date and Location",
+        "startDate": "Start Date",
+        "location": "Location",
+        "locationPlaceholder": "ZIP Code or Name",
+        "submit": "Submit",
+        "validation": {
+            "startDateRequired": "Please provide a valid start date.",
+            "locationRequired": "Please provide a valid location.",
+            "locationPattern": "Please enter a valid ZIP code or name (min. 2 characters)."
+        }
+    }
+}

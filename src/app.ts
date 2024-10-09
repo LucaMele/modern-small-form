@@ -1,2 +1,2 @@
-import './config/i18n';
-import './components/pages/minimum-wage-app';
+import './i18n/i18n';
+import './pages/wage-app';

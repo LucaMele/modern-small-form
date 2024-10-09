@@ -1,0 +1,20 @@
+{
+    "language": {
+        "de": "DE",
+        "fr": "FR",
+        "it": "IT",
+        "en": "EN"
+    },
+    "form": {
+        "title": "1. Einsatzdatum und Ort",
+        "startDate": "Startdatum",
+        "location": "Ort",
+        "locationPlaceholder": "PLZ oder Name",
+        "submit": "Einreichen",
+        "validation": {
+            "startDateRequired": "Bitte geben Sie ein gültiges Startdatum ein.",
+            "locationRequired": "Bitte geben Sie einen gültigen Ort an.",
+            "locationPattern": "Bitte geben Sie eine gültige PLZ oder einen Namen (mind. 2 Zeichen) ein."
+        }
+    }
+}

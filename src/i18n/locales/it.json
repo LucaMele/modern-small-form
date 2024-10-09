@@ -1,0 +1,20 @@
+{
+    "language": {
+        "de": "DE",
+        "fr": "FR",
+        "it": "IT",
+        "en": "EN"
+    },
+    "form": {
+        "title": "1. Data di Inizio e Luogo",
+        "startDate": "Data di inizio",
+        "location": "Luogo",
+        "locationPlaceholder": "CAP o Nome",
+        "submit": "Invia",
+        "validation": {
+            "startDateRequired": "Si prega di fornire una data di inizio valida.",
+            "locationRequired": "Si prega di fornire un luogo valido.",
+            "locationPattern": "Si prega di inserire un CAP o un nome valido (min. 2 caratteri)."
+        }
+    }
+}

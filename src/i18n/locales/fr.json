@@ -1,0 +1,20 @@
+{
+    "language": {
+        "de": "DE",
+        "fr": "FR",
+        "it": "IT",
+        "en": "EN"
+    },
+    "form": {
+        "title": "1. Date et Lieu d'Application",
+        "startDate": "Date de début",
+        "location": "Lieu",
+        "locationPlaceholder": "Code Postal ou Nom",
+        "submit": "Soumettre",
+        "validation": {
+            "startDateRequired": "Veuillez fournir une date de début valide.",
+            "locationRequired": "Veuillez fournir un lieu valide.",
+            "locationPattern": "Veuillez entrer un code postal ou un nom valide (min. 2 caractères)."
+        }
+    }
+}

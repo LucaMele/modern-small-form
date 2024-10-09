@@ -2,6 +2,20 @@ export default {
     content: ['src/**/*.{ts,html,css,scss}'],
     theme: {
         extend: {
+            keyframes: {
+                dropIn: {
+                    '0%': { transform: 'translateY(-40%)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+            },
+            animation: {
+                'drop-in': 'dropIn 0.5s ease-out forwards',
+                'fade-in': 'fadeIn 0.8s ease-out forwards',
+            },
             colors: {
                 primary: {
                     light: '#F0F4FF', // Light Blue (Background)
