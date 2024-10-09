@@ -26,13 +26,12 @@ export class CustomForm extends LanguageAwareComponent {
 
         const form = this.shadowRoot?.querySelector('form') as HTMLFormElement;
 
-        // Check if the form is valid natively
         if (form.checkValidity()) {
             const formData = new FormData(form);
             console.log('Form Data:', Object.fromEntries(formData.entries()));
         } else {
             console.error('Form is invalid');
-            form.reportValidity(); // Show browser validation messages
+            form.reportValidity();
         }
     }
 
@@ -43,10 +42,8 @@ export class CustomForm extends LanguageAwareComponent {
                 class="bg-[#F9F9F4] shadow-lg rounded-lg p-6 w-full mt-6 animate-drop-in"
                 novalidate
             >
-                <!-- Title -->
                 <h2 class="text-lg font-semibold mb-4 text-gray-700">${this.t('form.title')}</h2>
 
-                <!-- Start Date Input -->
                 <label for="start_date" class="block mb-2 text-sm font-medium text-gray-600"
                     >${this.t('form.startDate')}</label
                 >
@@ -61,11 +58,9 @@ export class CustomForm extends LanguageAwareComponent {
                         class="w-full p-3 border border-gray-300 rounded-md mb-1 text-gray-700"
                         @input="${this.handleInputChange}"
                     />
-                    <!-- Error message (shown only if invalid) -->
                     <span class="text-red-500 text-sm">Please provide a valid start date.</span>
                 </div>
 
-                <!-- Location Input -->
                 <label for="location" class="block mb-2 text-sm font-medium text-gray-600"
                     >${this.t('form.location')}</label
                 >
@@ -79,10 +74,8 @@ export class CustomForm extends LanguageAwareComponent {
                     placeholder="${this.t('form.locationPlaceholder')}"
                     @input="${this.handleInputChange}"
                 />
-                <!-- Error message (shown only if invalid) -->
                 <span class="text-red-500 text-sm">Please enter a valid ZIP code or name (min. 2 characters).</span>
 
-                <!-- Submit Button -->
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Submit
                 </button>
