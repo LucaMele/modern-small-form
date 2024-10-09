@@ -64,7 +64,7 @@ export class CustomForm extends LanguageAwareComponent {
                 @step-validated="${this.handleStepValidated}"
                 class="bg-[#F9F9F4] shadow-lg rounded-lg p-6 w-full mt-6 animate-drop-in"
             >
-                <wage-form-step .formElement=${this.formElement} .totalStep=${3}>
+                <wage-form-step .language=${this.language} .formElement=${this.formElement} .totalStep=${3}>
                     <div slot="step1">
                         <label for="start_date" class="block mb-2 text-sm font-medium text-gray-600"
                             >${this.t('form.startDate')}</label

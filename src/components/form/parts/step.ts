@@ -76,7 +76,6 @@ export class CustomForm extends LanguageAwareComponent {
     }
 
     render() {
-        console.log(this.currentStep);
         return html`
             <div>
                 <h2 class="text-lg font-semibold mb-4 text-gray-700">${this.t(`form.title${this.currentStep}`)}</h2>
