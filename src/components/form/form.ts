@@ -3,6 +3,8 @@ import { customElement, property, state } from 'lit/decorators.js';
 import tailwind from '../../_shared/tailwind.css?inline';
 import { LanguageAwareComponent } from '../../_shared/LanguageAwareComponent';
 
+const TOTAL_STEPS = 3;
+
 import './parts/step';
 @customElement('wage-form')
 export class CustomForm extends LanguageAwareComponent {
@@ -21,40 +23,48 @@ export class CustomForm extends LanguageAwareComponent {
     private formElement!: HTMLFormElement;
 
     @state()
-    private currentStep = 1;
+    private formDisabled: boolean = true;
+
+    @state()
+    private selectedValue = '';
 
     private handleStepValidated(event: CustomEvent) {
         const { step, isValid } = event.detail;
+
+        // At the moment radios dont validate as is in nextStep logic. needs adaption. cheap out in consider
+        // last step always valid
+        if ((TOTAL_STEPS - 1 === +step && isValid) || !this.selectedValue) {
+            this.formDisabled = false;
+        } else {
+            this.formDisabled = true;
+        }
 
         console.log(`Step ${step} valid: ${isValid}`);
     }
 
     handleInputChange(e: Event) {
         const input = e.target as HTMLInputElement;
-        input.classList.add('dirty'); // Mark the field as "dirty" after the first change
+        input.classList.add('dirty');
+    }
+
+    handleRadioChange(event: Event) {
+        const target = event.target as HTMLInputElement;
+        console.log('deded', target.value);
+        this.selectedValue = target.value;
     }
 
     firstUpdated() {
-        // Store the form element reference when the component is first rendered
         this.formElement = this.shadowRoot?.querySelector('form') as HTMLFormElement;
     }
 
     handleSubmit(e: Event) {
         e.preventDefault();
-
-        const form = this.shadowRoot?.querySelector('form') as HTMLFormElement;
-
+        const form = this.formElement;
         if (form.checkValidity()) {
             const formData = new FormData(form);
-            console.log('Form Data:', Object.fromEntries(formData.entries()));
         } else {
-            console.error('Form is invalid');
             form.reportValidity();
         }
-    }
-
-    private canSubmit() {
-        return true;
     }
 
     render() {
@@ -64,7 +74,7 @@ export class CustomForm extends LanguageAwareComponent {
                 @step-validated="${this.handleStepValidated}"
                 class="bg-[#F9F9F4] shadow-lg rounded-lg p-6 w-full mt-6 animate-drop-in"
             >
-                <wage-form-step .language=${this.language} .formElement=${this.formElement} .totalStep=${3}>
+                <wage-form-step .language=${this.language} .formElement=${this.formElement} .totalStep=${TOTAL_STEPS}>
                     <div slot="step1">
                         <label for="start_date" class="block mb-2 text-sm font-medium text-gray-600"
                             >${this.t('form.startDate')}</label
@@ -110,9 +120,11 @@ export class CustomForm extends LanguageAwareComponent {
                         />
                     </div>
                     <div slot="step3">
+                        <!-- TODO: get functions from server -->
                         <div class="flex items-center mb-4">
                             <input
                                 type="radio"
+                                @change="${this.handleRadioChange}"
                                 id="function1"
                                 name="functions"
                                 value="Bricklayer"
@@ -122,12 +134,21 @@ export class CustomForm extends LanguageAwareComponent {
                             <label for="function1" class="text-sm">Bricklayer</label>
                         </div>
                         <div class="flex items-center mb-4">
-                            <input type="radio" id="function2" name="functions" value="Plumber" class="mr-2" required />
+                            <input
+                                type="radio"
+                                id="function2"
+                                @change="${this.handleRadioChange}"
+                                name="functions"
+                                value="Plumber"
+                                class="mr-2"
+                                required
+                            />
                             <label for="function2" class="text-sm">Plumber</label>
                         </div>
                         <div class="flex items-center mb-4">
                             <input
                                 type="radio"
+                                @change="${this.handleRadioChange}"
                                 id="function3"
                                 name="functions"
                                 value="Electrician"
@@ -141,8 +162,8 @@ export class CustomForm extends LanguageAwareComponent {
 
                 <button
                     type="submit"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
-                    ?disabled="${!this.canSubmit()}"
+                    class="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4"
+                    ?disabled="${this.formDisabled}"
                 >
                     Submit
                 </button>

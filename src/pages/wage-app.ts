@@ -2,7 +2,8 @@ import { LitElement, html, css, unsafeCSS } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import tailwind from '../_shared/tailwind.css?inline';
 import i18next from 'i18next';
-import '../components/form/form';
+import '../components/form';
+import '../components/summary';
 
 // interface CalculationData {
 //     dateOfBirth: string;
@@ -92,6 +93,7 @@ export class MinimumWageApp extends LitElement {
 
                 <div class="w-full min-w-72">
                     <wage-form .language=${this._language}></wage-form>
+                    <wage-summary></wage-summary>
                 </div>
                 </div>
             </div>
