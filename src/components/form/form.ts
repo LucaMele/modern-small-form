@@ -38,8 +38,6 @@ export class CustomForm extends LanguageAwareComponent {
         } else {
             this.formDisabled = true;
         }
-
-        console.log(`Step ${step} valid: ${isValid}`);
     }
 
     handleInputChange(e: Event) {
@@ -49,7 +47,6 @@ export class CustomForm extends LanguageAwareComponent {
 
     handleRadioChange(event: Event) {
         const target = event.target as HTMLInputElement;
-        console.log('deded', target.value);
         this.selectedValue = target.value;
     }
 
@@ -59,9 +56,18 @@ export class CustomForm extends LanguageAwareComponent {
 
     handleSubmit(e: Event) {
         e.preventDefault();
-        const form = this.formElement;
+
+        const form = e.target as HTMLFormElement;
+        const formData = new FormData(form);
+
         if (form.checkValidity()) {
-            const formData = new FormData(form);
+            this.dispatchEvent(
+                new CustomEvent('form-submit', {
+                    detail: { formData: Object.fromEntries(formData.entries()) },
+                    bubbles: true,
+                    composed: true,
+                })
+            );
         } else {
             form.reportValidity();
         }
@@ -69,11 +75,7 @@ export class CustomForm extends LanguageAwareComponent {
 
     render() {
         return html`
-            <form
-                @submit="${this.handleSubmit}"
-                @step-validated="${this.handleStepValidated}"
-                class="bg-[#F9F9F4] shadow-lg rounded-lg p-6 w-full mt-6 animate-drop-in"
-            >
+            <form @submit="${this.handleSubmit}" @step-validated="${this.handleStepValidated}">
                 <wage-form-step .language=${this.language} .formElement=${this.formElement} .totalStep=${TOTAL_STEPS}>
                     <div slot="step1">
                         <label for="start_date" class="block mb-2 text-sm font-medium text-gray-600"
